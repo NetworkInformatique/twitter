@@ -37,6 +37,8 @@ module Twitter
         response_body = response.body.empty? ? '' : symbolize_keys!(response.parse)
         response_headers = response.headers
         fail_or_return_response_body(response.code, response_body, response_headers)
+        Rails.logger.debug '## response_body'
+        Rails.logger.debug response_body
       end
 
     private
